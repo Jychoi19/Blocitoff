@@ -1,6 +1,12 @@
 h3 {
   margin: 0px; }
 
+.md-default-theme {
+  padding: 0px; }
+
+.md-layout-row {
+  padding-top: 50px; }
+
 .box {
   border: 1px solid;
   height: 600px;
