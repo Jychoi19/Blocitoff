@@ -1,8 +1,4 @@
-app.controller("SampleCtrl", function($scope, $firebaseObject) {
-	var ref = new Firebase("https://<YOUR-FIREBASE-APP>.firebaseio.com");
+app.controller("MainController", ["$firebaseArray", function($scope, $firebaseArray) {
+    var ref = new Firebase("https://blocitoff1.firebaseio.com/");
 
-	// download the data into a local object
-	$scope.data = $firebaseObject(ref)
-	
-	// putting a console.log here won't work, see below
-});
+}]);
