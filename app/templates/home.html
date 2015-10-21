@@ -4,8 +4,8 @@
         <md-card flex>
             <md-list>
                 <h3 class="checklist">Checklist</h3>
-                <md-subheader>Results</md-subheader>
-                <md-list-item class="md-3-line" ng-repeat="task in tasks">
+<!--                 <md-subheader>Results</md-subheader> -->
+                <md-list-item class="md-3-line" ng-repeat="task in tasks" ng-show="showTask">
                     <div class="md-list-item-text">
                         <h3>{{ task.name }}</h3>
                         <p>{{ task.info }}</p>
