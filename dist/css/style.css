@@ -1,6 +1,7 @@
-h3 {
-  margin: 0px; }
-
+/*h3 {
+  	margin: 0px;
+}
+*/
 .md-default-theme {
   padding: 0px; }
 
@@ -8,7 +9,16 @@ h3 {
   padding-top: 50px; }
 
 .checklist {
-  color: white;
+  color: black;
   padding: 30px;
-  background: #A7AFAF;
+  /*  	background: #A7AFAF;*/
   text-align: center; }
+
+.md-button.md-icon-button {
+  margin: 0 0.6rem;
+  height: 4.8rem;
+  min-width: 0;
+  line-height: 4.8rem;
+  padding-left: 0;
+  padding-right: 0;
+  width: 4.8rem; }

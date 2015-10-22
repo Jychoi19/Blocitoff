@@ -1,10 +1,19 @@
 <md-content >
 <div layout="row">
-    <div flex="20"></div>
-        <md-card flex>
-            <md-list>
-                <h3 class="checklist">Checklist</h3>
-<!--                 <md-subheader>Results</md-subheader> -->
+    <div flex="15"></div>
+            <md-list flex>
+                <h1 class="checklist">Checklist</h1>
+                <div layout layout-sm="column">
+                    <md-input-container flex="30">
+                        <label>Input Task</label>
+                        <input ng-model="user.task">
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Input Description</label>
+                        <input ng-model="user.descriptions">
+                    </md-input-container>                        
+                    <md-button class="md-raised md-warn">Add</md-button>
+                </div>
                 <md-list-item class="md-3-line" ng-repeat="task in tasks">
                     <div class="md-list-item-text">
                         <h3>{{ task.name }}</h3>
@@ -14,8 +23,8 @@
                     <md-divider></md-divider>
                 </md-list-item>    
             </md-list>
-        </md-card>
-    <div flex="20"></div>
+
+    <div flex="15"></div>
 </div>
 </md-content>
 
