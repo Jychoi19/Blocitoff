@@ -17,10 +17,16 @@ app.controller("HomeController", ['$scope', '$firebaseArray','$timeout', functio
         $scope.taskDescription = "";
     };
 
-    // $scope.showTask = true;
+    // Remove item from taskList
+    $scope.removeTask = function(index){
+        $scope.taskList.$remove(index);
+    }
+
+    // $scope.taskList = true;
 
     // $timeout(function() {
-    //     $scope.showTask = false;
+    //     if ($scope.taskList.id > 1000) 
+    //         $scope.taskList = false;
     // }, 5000);
 
 }]);

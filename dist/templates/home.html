@@ -3,7 +3,7 @@
         <md-list flex>
 
             <!-- Title -->
-            <h1 class="checklist">Checklist</h1>
+            <h1 class="md-display-2" align="center">Checklist</h1>
             
             <!-- Input container -->
             <div layout layout-sm="column">
@@ -24,7 +24,10 @@
                     <h3>{{ task.task }}</h3>
                     <p>{{ task.description }}</p>
                 </div>
-                <md-checkbox class="md-secondary"></md-checkbox>
+                <div>
+                    <md-checkbox class="md-secondary"></md-checkbox>
+                    <i class="material-icons md-warn" ng-click="removeTask($index)">remove_circle</i>
+                </div>
                 <md-divider></md-divider>
             </md-list-item>
 
