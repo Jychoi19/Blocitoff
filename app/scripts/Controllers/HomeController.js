@@ -25,10 +25,6 @@ app.controller("HomeController", ['$scope', '$firebaseArray','$interval', functi
             console.log(interval);
             if (interval > 604800000) {
                 $scope.taskList[i].expired = true;
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
             }
         };
     }, 60000);
