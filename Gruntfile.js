@@ -21,7 +21,7 @@ module.exports = function(grunt) {
                     style: 'expanded'
                 },
                 files: {
-                    './dist/css/style.css': './app/sass/style.scss'
+                    './dist/css/style.css': './app/css/style.css'
                 }
             }
         },
@@ -37,7 +37,7 @@ module.exports = function(grunt) {
         watch: {
             hapi: {
                 files: [
-                    './app/images/*.{png,jpg,jpeg}',
+                    './app/images/*.{png,jpg,jpeg,svg}',
                     './app/scripts/**/*.js',
                     './app/sass/**/*.scss',
                     './app/pages/**/*.html',

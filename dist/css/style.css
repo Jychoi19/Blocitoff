@@ -1,0 +1,15 @@
+/*h3 {
+  	margin: 0px;
+}
+*/
+.md-default-theme {
+  padding: 0px; }
+
+.md-layout-row {
+  padding-top: 50px; }
+
+.checklist {
+  color: black;
+  padding: 30px;
+  /*  	background: #A7AFAF;*/
+  text-align: center; }

@@ -1,1 +1,38 @@
-<h1>Home Page</h1>
+<div layout="row">
+    <div flex="15"></div>
+        <md-list flex>
+
+            <!-- Title -->
+            <h1 class="md-display-2" align="center">Checklist</h1>
+            
+            <!-- Input container -->
+            <form ng-submit="addTask()">
+                <div layout layout-sm="column">
+                    <md-input-container flex="30">
+                        <label>Input Task</label>
+                        <input ng-model="taskName">
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Input Description</label>
+                        <input ng-model="taskDescription">
+                    </md-input-container>                        
+                    <md-button class="md-raised md-warn">Add</md-button>
+                </div>
+            </form>
+
+            <!-- Task List -->
+            <md-list-item class="md-3-line" ng-repeat="task in taskList" ng-hide="task.expired">
+                    <div class="md-list-item-text">
+                        <h3>{{ task.task }}</h3>
+                        <p>{{ task.description }}</p>
+                    </div>
+                    <div>
+                        <md-checkbox class="md-secondary"></md-checkbox>
+                        <i class="material-icons md-warn" ng-click="removeTask($index)">remove_circle</i>
+                    </div>
+                    <md-divider></md-divider>
+            </md-list-item>
+        </md-list>
+    <div flex="15"></div>
+</div>
+
