@@ -6,17 +6,19 @@
             <h1 class="md-display-2" align="center">Checklist</h1>
             
             <!-- Input container -->
-            <div layout layout-sm="column">
-                <md-input-container flex="30">
-                    <label>Input Task</label>
-                    <input ng-model="taskName">
-                </md-input-container>
-                <md-input-container flex>
-                    <label>Input Description</label>
-                    <input ng-model="taskDescription">
-                </md-input-container>                        
-                <md-button class="md-raised md-warn" ng-click="addTask()">Add</md-button>
-            </div>
+            <form ng-submit="addTask()">
+                <div layout layout-sm="column">
+                    <md-input-container flex="30">
+                        <label>Input Task</label>
+                        <input ng-model="taskName">
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Input Description</label>
+                        <input ng-model="taskDescription">
+                    </md-input-container>                        
+                    <md-button class="md-raised md-warn">Add</md-button>
+                </div>
+            </form>
 
             <!-- Task List -->
             <md-list-item class="md-3-line" ng-repeat="task in taskList" ng-hide="task.expired">
