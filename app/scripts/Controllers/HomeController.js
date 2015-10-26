@@ -1,32 +1,30 @@
 var app = angular.module('Blocitoff');
 
-app.controller("HomeController", ['$scope', '$firebaseArray','$timeout', function($scope, $firebaseArray, $timeout) {
+app.controller("HomeController", ['$scope', '$firebaseArray','$interval', function($scope, $firebaseArray, $interval) {
     var taskRef = new Firebase("https://blocitoff1.firebaseio.com/");
     
     $scope.taskList = $firebaseArray(taskRef);
 
-    // Add item to taskList
     $scope.addTask = function(){
-        var timestamp = new Date().valueOf();
         $scope.taskList.$add({
-            id: timestamp,
+            timestamp: Firebase.ServerValue.TIMESTAMP,
             task: $scope.taskName,
             description: $scope.taskDescription,
         });
         $scope.taskName = "";
-        $scope.taskDescription = "";
+        $scope.taskDescription = "";    
     };
 
-    // Remove item from taskList
     $scope.removeTask = function(index){
         $scope.taskList.$remove(index);
     }
 
-    // $scope.taskList = true;
-
-    // $timeout(function() {
-    //     if ($scope.taskList.id > 1000) 
-    //         $scope.taskList = false;
-    // }, 5000);
-
+    $interval(function() {
+        for (var i = 0; i < $scope.taskList.length; i++) {
+            var interval = new Date() - new Date($scope.taskList[i].timestamp); 
+            if (interval > 604800000) {
+                $scope.removeTask(i);
+            }
+        };
+    }, 60000);
 }]);
