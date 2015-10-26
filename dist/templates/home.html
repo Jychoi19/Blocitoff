@@ -6,26 +6,23 @@
             <h1 class="md-display-2" align="center">Checklist</h1>
             
             <!-- Input container -->
-            <div layout layout-sm="column">
-                <md-input-container flex="30">
-                    <label>Input Task</label>
-                    <input ng-model="taskName">
-                </md-input-container>
-                <md-input-container flex>
-                    <label>Input Description</label>
-                    <input ng-model="taskDescription">
-                </md-input-container>                        
-                <md-button class="md-raised md-warn" ng-click="addTask()">Add</md-button>
-            </div>
+            <form ng-submit="addTask()">
+                <div layout layout-sm="column">
+                    <md-input-container flex="30">
+                        <label>Input Task</label>
+                        <input ng-model="taskName">
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Input Description</label>
+                        <input ng-model="taskDescription">
+                    </md-input-container>                        
+                    <md-button class="md-raised md-warn">Add</md-button>
+                </div>
+            </form>
 
             <!-- Task List -->
-<<<<<<< HEAD
-            <md-list-item class="md-3-line" ng-repeat="task in taskList">
-                    <div class="md-list-item-text" >
-=======
             <md-list-item class="md-3-line" ng-repeat="task in taskList" ng-hide="task.expired">
                     <div class="md-list-item-text">
->>>>>>> hidetasks
                         <h3>{{ task.task }}</h3>
                         <p>{{ task.description }}</p>
                     </div>
@@ -34,13 +31,7 @@
                         <i class="material-icons md-warn" ng-click="removeTask($index)">remove_circle</i>
                     </div>
                     <md-divider></md-divider>
-<<<<<<< HEAD
-
             </md-list-item>
-
-=======
-            </md-list-item>
->>>>>>> hidetasks
         </md-list>
     <div flex="15"></div>
 </div>
