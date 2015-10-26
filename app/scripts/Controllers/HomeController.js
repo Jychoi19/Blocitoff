@@ -23,7 +23,7 @@ app.controller("HomeController", ['$scope', '$firebaseArray','$interval', functi
         for (var i = 0; i < $scope.taskList.length; i++) {
             var interval = new Date() - new Date($scope.taskList[i].timestamp); 
             if (interval > 604800000) {
-                $scope.removeTask(i);
+                $scope.taskList[i].expired = true;
             }
         };
     }, 60000);
