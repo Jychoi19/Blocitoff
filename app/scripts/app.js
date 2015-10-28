@@ -13,9 +13,9 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
          	templateUrl: '/templates/home.html'
      	}),
     $stateProvider
-    .state('history', {
-        url: '/history',
-        controller: 'HistoryController',
-        templateUrl: '/templates/history.html'
+    .state('complete', {
+        url: '/complete',
+        controller: 'HomeController',
+        templateUrl: '/templates/complete.html'
     })    
  });

@@ -4,6 +4,8 @@
 
             <!-- Title -->
             <h1 class="md-display-2" align="center">Checklist</h1>
+            <p class="md-display-2" align="center">Active Tasks</p>
+            <a ui-sref="complete">Completed Tasks</a>
             
             <!-- Input container -->
             <form ng-submit="addTask()">
@@ -29,20 +31,6 @@
                     <div>   
                         <md-checkbox class="md-secondary" layout="row"></md-checkbox>
                         <i class="material-icons removebtn" ng-click="removeTask($index)">remove_circle</i>
-                    </div>
-                    <md-divider></md-divider>
-            </md-list-item>
-
-            <!-- Task List COMPLETE-->
-            <p class="md-display-2" align="center">Completed Tasks</p>
-            <md-list-item class="md-3-line" ng-repeat="task in taskList" ng-show="task.expired">
-                    <div class="md-list-item-text">
-                        <h3>{{ task.task }}</h3>
-                        <p>{{ task.description }}</p>
-                    </div>
-                    <div>
-                        <md-checkbox class="md-secondary"></md-checkbox>
-                        <i class="material-icons md-warn" ng-click="removeTask($index)">remove_circle</i>
                     </div>
                     <md-divider></md-divider>
             </md-list-item>

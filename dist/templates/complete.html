@@ -4,6 +4,8 @@
 
             <!-- Title -->
             <h1 class="md-display-2" align="center">Checklist</h1>
+            <p class="md-display-2" align="center">Completed Tasks</p>
+            <a ui-sref="home">Active Tasks</a>
             
             <!-- Input container -->
             <form ng-submit="addTask()">
@@ -20,7 +22,7 @@
                 </div>
             </form>
 
-            <!-- Task List -->
+            <!-- Task List COMPLETE-->
             <md-list-item class="md-3-line" ng-repeat="task in taskList" ng-show="task.expired">
                     <div class="md-list-item-text">
                         <h3>{{ task.task }}</h3>
@@ -32,6 +34,7 @@
                     </div>
                     <md-divider></md-divider>
             </md-list-item>
+
         </md-list>
     <div flex="15"></div>
 </div>

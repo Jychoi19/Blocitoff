@@ -1,6 +1,6 @@
 var app = angular.module('Blocitoff');
 
-app.controller("HomeController", ['$scope', '$firebaseArray','$interval', function($scope, $firebaseArray, $interval) {
+app.controller("CompleteController", ['$scope', '$firebaseArray','$interval', function($scope, $firebaseArray, $interval) {
     var taskRef = new Firebase("https://blocitoff1.firebaseio.com/");
     
     $scope.taskList = $firebaseArray(taskRef);
@@ -22,6 +22,7 @@ app.controller("HomeController", ['$scope', '$firebaseArray','$interval', functi
     $interval(function() {
         for (var i = 0; i < $scope.taskList.length; i++) {
             var interval = new Date() - new Date($scope.taskList[i].timestamp); 
+            console.log(interval);
             if (interval > 604800000) {
                 $scope.taskList[i].expired = true;
             }

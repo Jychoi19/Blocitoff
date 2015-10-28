@@ -14,9 +14,9 @@
 	color: grey;
 }
 .md-secondary {
-	left: 580px;
+	left: -5px;
 	width: 18px;
 }
-/*.md-list-item-text {
-	padding-left: 30px;
-}*/
+.md-list-item-text {
+	padding-left: 35px;
+}
