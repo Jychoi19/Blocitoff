@@ -3,6 +3,8 @@ var app = angular.module('Blocitoff');
 app.controller("HomeController", ['$scope', '$firebaseArray','$interval', function($scope, $firebaseArray, $interval) {
     var taskRef = new Firebase("https://blocitoff1.firebaseio.com/");
     
+    $scope.title = "Active Tasks";
+
     $scope.taskList = $firebaseArray(taskRef);
 
     $scope.addTask = function(){

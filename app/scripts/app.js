@@ -15,7 +15,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
     .state('complete', {
         url: '/complete',
-        controller: 'HomeController',
+        controller: 'CompleteController',
         templateUrl: '/templates/complete.html'
     })    
  });
