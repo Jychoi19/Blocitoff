@@ -1,7 +1,3 @@
-/*h3 {
-  	margin: 0px;
-}
-*/
 .md-default-theme {
   	padding: 0px;
 }
@@ -11,6 +7,16 @@
 .checklist {
   	color: black;
   	padding: 30px;
-/*  	background: #A7AFAF;*/
   	text-align: center;
 }
+.removebtn {
+	padding-top: 32px;
+	color: grey;
+}
+.md-secondary {
+	left: 580px;
+	width: 18px;
+}
+/*.md-list-item-text {
+	padding-left: 30px;
+}*/

@@ -22,6 +22,20 @@
 
             <!-- Task List -->
             <md-list-item class="md-3-line" ng-repeat="task in taskList" ng-hide="task.expired">
+                    <div class="md-list-item-text" flex="20">
+                        <h3>{{ task.task }}</h3>
+                        <p>{{ task.description }}</p>                     
+                    </div>
+                    <div>   
+                        <md-checkbox class="md-secondary" layout="row"></md-checkbox>
+                        <i class="material-icons removebtn" ng-click="removeTask($index)">remove_circle</i>
+                    </div>
+                    <md-divider></md-divider>
+            </md-list-item>
+
+            <!-- Task List COMPLETE-->
+            <p class="md-display-2" align="center">Completed Tasks</p>
+            <md-list-item class="md-3-line" ng-repeat="task in taskList" ng-show="task.expired">
                     <div class="md-list-item-text">
                         <h3>{{ task.task }}</h3>
                         <p>{{ task.description }}</p>
@@ -32,6 +46,7 @@
                     </div>
                     <md-divider></md-divider>
             </md-list-item>
+
         </md-list>
     <div flex="15"></div>
 </div>

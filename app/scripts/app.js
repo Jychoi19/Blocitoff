@@ -11,5 +11,11 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         	url: '/home',
          	controller: 'HomeController',
          	templateUrl: '/templates/home.html'
-     	})
+     	}),
+    $stateProvider
+    .state('history', {
+        url: '/history',
+        controller: 'HistoryController',
+        templateUrl: '/templates/history.html'
+    })    
  });
