@@ -2,10 +2,13 @@
     <div flex="15"></div>
         <md-list flex>
 
+                <a ui-sref="home">Active Tasks</a>
+                <a ui-sref="complete">Completed Tasks</a>
+                <p class="md-subhead titleName" align="center" layout="row">{{title}}</p>
+            <br>
+            
             <!-- Title -->
-            <h1 class="md-display-2" align="center">Checklist</h1>
-            <p class="md-display-2" align="center">{{title}}</p>
-            <a ui-sref="complete">Completed Tasks</a>
+            <h1 class="md-display-3" align="center">Checklist</h1>
             
             <!-- Input container -->
             <form ng-submit="addTask()">
@@ -23,8 +26,8 @@
             </form>
 
             <!-- Task List -->
-            <md-list-item class="md-3-line" ng-repeat="task in taskList" ng-hide="task.expired">
-                    <div class="md-list-item-text" flex="20">
+            <md-list-item class="md-3-line" ng-repeat="task in taskList" ng-hide="task.expired || task.">
+                    <div class="md-list-item-text">
                         <h3>{{ task.task }}</h3>
                         <p>{{ task.description }}</p>                     
                     </div>

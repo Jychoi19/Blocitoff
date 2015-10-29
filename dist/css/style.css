@@ -1,10 +1,8 @@
 .md-default-theme {
   padding: 0px; }
 
-.md-layout-row {
-  padding-top: 50px; }
-
 .checklist {
+  padding-top: 50px;
   color: black;
   padding: 30px;
   text-align: center; }
@@ -19,3 +17,7 @@
 
 .md-list-item-text {
   padding-left: 35px; }
+
+.titleName {
+  postition: absolute;
+  margin: 0px; }
