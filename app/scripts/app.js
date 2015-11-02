@@ -5,12 +5,12 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
          enabled: true,
          requireBase: false
      });
-    $urlRouterProvider.otherwise("/home");
+    $urlRouterProvider.otherwise("/active");
     $stateProvider
-     	.state('home', {
-        	url: '/home',
-         	controller: 'HomeController',
-         	templateUrl: '/templates/home.html'
+     	.state('active', {
+        	url: '/active',
+         	controller: 'ActiveController',
+         	templateUrl: '/templates/active.html'
      	}),
     $stateProvider
     .state('complete', {
