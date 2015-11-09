@@ -26,6 +26,12 @@ app.controller("ActiveController", ['$scope', '$firebaseArray','$interval', func
         $scope.taskList.$save(task);
     };
 
+    $scope.togglePriority = function(task, event) {
+        event.stopImmediatePropagation();
+        task.critical = !task.critical;
+        $scope.saveTask(task);
+    };
+
     $scope.expiredTask = function() {
         for (var i = 0; i < $scope.taskList.length; i++) {
             var interval = new Date() - new Date($scope.taskList[i].timestamp); 

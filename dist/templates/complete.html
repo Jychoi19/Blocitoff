@@ -26,16 +26,15 @@
             </form>
             
             <!-- Task List COMPLETE-->
-            <md-list-item class="md-3-line" ng-repeat="task in taskList" ng-show="task.expired || task.done">
+            <md-list-item class="md-3-line" ng-repeat="task in taskList | orderBy:'!critical'" ng-show="task.expired || task.done">
                     <div class="md-list-item-text">
                         <h3>{{ task.task }}</h3>
                         <p>{{ task.description }}</p>
                     </div>
                     <div>
                         <md-checkbox class="md-secondary" layout="row" ng-model="task.done" ng-change="saveTask(task)"></md-checkbox>
-                        <i class="material-icons" ng-click="">keyboard_arrow_up</i>
-                        <i class="material-icons" ng-click="">keyboard_arrow_down</i>
-                        <i class="material-icons removebtn" ng-click="removeTask($index)">remove_circle</i>                        
+                        <i class="material-icons" ng-click="togglePriority(task, $event)">{{task.critical ? 'star' : 'star_border'}}</i>
+                        <i class="material-icons removebtn" ng-click="removeTask($index)">remove_circle</i>                   
                     </div>
                     <md-divider></md-divider>
             </md-list-item>

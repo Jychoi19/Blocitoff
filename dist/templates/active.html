@@ -26,17 +26,14 @@
             </form>
 
             <!-- Task List -->
-            <md-list-item class="md-3-line" ng-repeat="task in taskList" ng-hide="task.expired || task.done">
+            <md-list-item class="md-3-line" ng-repeat="task in taskList | orderBy:'!critical'" ng-hide="task.expired || task.done">
                     <div class="md-list-item-text">
                         <h3>{{ task.task }}</h3>
                         <p>{{ task.description }}</p>                     
                     </div>
                     <div>   
-                        <!-- fade out. ng repeat.  -->
                         <md-checkbox class="md-secondary" layout="row" ng-model="task.done" ng-change="saveTask(task)"></md-checkbox>
-                        <!-- how do i move items in an array up and down? -->
-                        <i class="material-icons" ng-click="">keyboard_arrow_up</i>
-                        <i class="material-icons" ng-click="">keyboard_arrow_down</i>
+                        <i class="material-icons" ng-click="togglePriority(task, $event)">{{task.critical ? 'star' : 'star_border'}}</i>
                         <i class="material-icons removebtn" ng-click="removeTask($index)">remove_circle</i>
                     </div>
                     <md-divider></md-divider>
