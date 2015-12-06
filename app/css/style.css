@@ -1,24 +1,24 @@
 .md-default-theme {
-  	padding: 0px;
+  padding: 0px;
 }
 .checklist {
-	padding-top: 50px;
-  	color: black;
-  	padding: 30px;
-  	text-align: center;
+  padding-top: 50px;
+  color: black;
+  padding: 30px;
+  text-align: center;
 }
 .removebtn {
-	padding-top: 32px;
-	color: grey;
+  padding-top: 32px;
+  color: grey;
 }
 .md-secondary {
-	left: -5px;
-	width: 18px;
+  left: -5px;
+  width: 18px;
 }
 .md-list-item-text {
-	padding-left: 35px;
+  padding-left: 35px;
 }
 .titleName {
-	postition: absolute;
-	margin: 0px;
+  postition: absolute;
+  margin: 0px;
 }
