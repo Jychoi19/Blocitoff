@@ -40,7 +40,7 @@ app.controller("ActiveController", ['$scope', '$firebaseArray','$interval', func
       }
     };
   };
-
+  
   $scope.taskList.$loaded().then($scope.expiredTask);
   $interval($scope.expiredTask, 60000);
 }]);
