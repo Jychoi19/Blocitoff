@@ -1,54 +1,25 @@
 module.exports = function(grunt) {
 
-    grunt.registerTask( 'default', [ 'clean', 'browserify', 'sass', 'autoprefixer', 'copy', 'hapi', 'watch'] );
+    grunt.registerTask( 'default', [ 'clean',  'copy', 'hapi', 'watch'] );
 
-    grunt.registerTask( 'build', [ 'clean', 'browserify', 'sass', 'autoprefixer', 'copy' ] );
+    grunt.registerTask( 'build', [ 'clean', 'copy' ] );
 
     grunt.registerTask( 'run', [ 'hapi', 'watch' ]);
 
     grunt.initConfig({
-        browserify: {
-            dist: {
-                files: {
-                    './dist/js/app.js': ['./app/scripts/app.js']
-                }
-            }
-        },
-
-        sass: {
-            dist: {
-                options: {
-                    style: 'expanded'
-                },
-                files: {
-                    './dist/css/style.css': './app/css/style.css'
-                }
-            }
-        },
-
-        autoprefixer: {
-            dist: {
-                files: {
-                    './dist/css/style.css': './dist/css/style.css'
-                }
-            }
-        },
 
         watch: {
             hapi: {
                 files: [
                     './app/images/*.{png,jpg,jpeg,svg}',
                     './app/scripts/**/*.js',
-                    './app/sass/**/*.scss',
+                    './app/css/**/*.css',
                     './app/pages/**/*.html',
                     './app/templates/**/*.html',
                     'Gruntfile.js'
                 ],
                 tasks: [
                     'clean',
-                    'browserify',
-                    'sass',
-                    'autoprefixer',
                     'copy'
                 ],
                 options: {
@@ -64,6 +35,11 @@ module.exports = function(grunt) {
                     src: [ './images/*.{png,jpg,jpeg}' ],
                     dest: './dist/images',
                     cwd: './app'
+                }, {
+                    expand: true,
+                    src: [ './**/*.css' ],
+                    dest: './dist/css',
+                    cwd: './app/css'
                 }, {
                     expand: true,
                     src: [ './**/*.html' ],
@@ -97,11 +73,8 @@ module.exports = function(grunt) {
         clean: ['./dist']
     });
 
-    grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-hapi');
-    grunt.loadNpmTasks('grunt-sass');
-    grunt.loadNpmTasks('grunt-autoprefixer');
 };
